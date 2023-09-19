@@ -24,6 +24,11 @@ class Point {
   }
 }
 
+
+
+
+
+
 class TroisPoints {
   private point1: Point;
   private point2: Point;
@@ -42,17 +47,27 @@ class TroisPoints {
 
     return (
       Math.abs(distance1to2 - distance1to3) < 0.001 &&
-      Math.abs(distance1to2 - distance2to3) < 0.001
+      Math.abs(distance1to2 - distance2to3) < 0.001 &&
+      //pour être sur mais non necessaire
+      Math.abs(distance1to3 - distance2to3) < 0.001 
     );
   }
 }
 
-const pointA = new Point(0, 0);
-const pointB = new Point(3, 0);
-const pointC = new Point(1.5, Math.sqrt(3));
 
+const pointA = new Point(0, 0);
+const pointB = new Point(2, 0);
+const pointC = new Point(1, Math.sqrt(3));
+
+
+console.log('A', pointA)
+console.log('B', pointB)
+console.log('C', pointC)
+console.log('')
 console.log("Distance entre pointA et pointB:", pointA.calculerDistance(pointB));
-console.log("Milieu entre pointA et pointB:", pointA.calculerMilieu(pointB).sePresenter());
+console.log("Milieu entre pointA et pointB:", pointA.calculerMilieu(pointB));
+console.log('');
 
 const triangle = new TroisPoints(pointA, pointB, pointC);
 console.log("Le triangle est équilatéral:", triangle.estEquilateral());
+
